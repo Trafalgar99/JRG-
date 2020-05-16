@@ -193,3 +193,9 @@ body{
     border: 40px solid #fff;
 }
 ```
+
+## 设置usercard的位置
+
++ 给div一个负的外边距可以使div整体移动
++ 对一个内联元素来说，设置左右padding起作用，上下padding不起作用
++ 内联元素居中要在其父元素上加text-align：center 

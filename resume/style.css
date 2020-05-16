@@ -190,3 +190,13 @@ a {
     fill: white;
     vertical-align: top;
 }
+body > main{
+    margin-top: -340px;
+}
+body > main > .downloadResume{
+    font-size: 14px;
+    line-height: 16px;
+    padding: 21px 55px;
+    display: inline-block;
+    border: 1px solid red;
+}
