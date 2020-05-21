@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header></header>
+    <main>
+        <div class="wrapper">
+            <div>
+                <kbd>q
+                    <button>编辑</button>
+                </kbd>
+                <kbd>w
+                    <button>编辑</button>
+                </kbd>
+                <kbd>e
+                    <button>编辑</button>
+                </kbd>
+                <kbd>r
+                    <button>编辑</button>
+                </kbd>
+                <kbd>t
+                    <button>编辑</button>
+                </kbd>
+                <kbd>y
+                    <button>编辑</button>
+                </kbd>
+                <kbd>u
+                    <button>编辑</button>
+                </kbd>
+                <kbd>i
+                    <button>编辑</button>
+                </kbd>
+                <kbd>o
+                    <button>编辑</button>
+                </kbd>
+                <kbd>p
+                    <button>编辑</button>
+                </kbd>
+            </div>
+            <div>
+                <kbd>a
+                    <button>编辑</button>
+                </kbd>
+                <kbd>s
+                    <button>编辑</button>
+                </kbd>
+                <kbd>d
+                    <button>编辑</button>
+                </kbd>
+                <kbd>f
+                    <button>编辑</button>
+                </kbd>
+                <kbd>g
+                    <button>编辑</button>
+                </kbd>
+                <kbd>h
+                    <button>编辑</button>
+                </kbd>
+                <kbd>j
+                    <button>编辑</button>
+                </kbd>
+                <kbd>k
+                    <button>编辑</button>
+                </kbd>
+                <kbd>l
+                    <button>编辑</button>
+                </kbd>
+            </div>
+            <div>
+                <kbd>z
+                    <button>编辑</button>
+                </kbd>
+                <kbd>x
+                    <button>编辑</button>
+                </kbd>
+                <kbd>c
+                    <button>编辑</button>
+                </kbd>
+                <kbd>v
+                    <button>编辑</button>
+                </kbd>
+                <kbd>b
+                    <button>编辑</button>
+                </kbd>
+                <kbd>n
+                    <button>编辑</button>
+                </kbd>
+                <kbd>m
+                    <button>编辑</button>
+                </kbd>
+            </div>
+        </div>
+        
+    </main>
+    <footer></footer>
+    <script>
+        var hash = {
+            'q':'qq.com',
+            'w':'weibo.com'
+        }
+
+        document.onkeypress = function(ff){
+            console.log('i find you')
+            key = ff['key']
+            website = hash[key]
+            console.log(website)
+            // location.href = 'http://' + website
+            window.open('http://'+website, '_blank')
+        }
+    </script>
+</body>
+</html>
