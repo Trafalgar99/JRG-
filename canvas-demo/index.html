@@ -4,19 +4,41 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JS Bin</title>
   <link rel="stylesheet" href="style.css">
-
+  <script src="//at.alicdn.com/t/font_1847209_nct9jzn8c1j.js"></script>
 </head>
 
 <body>
+
   <canvas id="xxx" width=300 height=300>
 
   </canvas>
   <div id="actions" class="actions">
-    <button id="eraser">橡皮擦</button>
-    <button id="brush">画笔</button>
+    <svg class="icon active" id="pen">
+      <use xlink:href="#icon-pencil"></use>
+    </svg>
+    <svg class="icon" id="eraser">
+      <use xlink:href="#icon-eraser-l"></use>
+    </svg>
+    <svg class="icon" id="download">
+      <use xlink:href="#icon-save"></use>
+    </svg>
+    <svg class="icon" id="clear">
+      <use xlink:href="#icon-clear"></use>
+    </svg>
+    
   </div>
+  <ol class="colors">
+    <li id="red" class="red active"></li>
+    <li id="green" class="green"></li>
+    <li id="blue" class="blue"></li>
+  </ol>
+  <ol class="sizes">
+    <li id="thin" class="thin"></li>
+    <li id="thick" class="thick"></li>
+  </ol>
 
   <script type="text/javascript" src="main.js"></script>
 </body>
