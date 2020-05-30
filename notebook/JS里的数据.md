@@ -38,3 +38,19 @@ parseFloat('xxx.xx')
 
 
 
+# JS里的对象
+
+alert
+prompt
+comfirm
+console
+
+
+setTimeout(fun,time)
+
+
+**window**
+
+**document**
+
+**history**
