@@ -14,10 +14,22 @@
        fill: currentColor;
        overflow: hidden;
     }
+    .site-welcome{
+      display: none;
+      position:fixed;
+      top:0;left:0;width: 100%;height: 100%;
+      background: black;
+      z-index: 1;
+    }
+    .site-welcome.active{
+      display: block;
+    }
 </style>
 </head>
 <body>
-
+  <div class="site-welcome active">
+    <div class="loading"></div>
+  </div>
   <div class="topNavBar">
     <div class="topNavBar-inner  clearfix">
       <a class="logo" href="##" alt="logo" style="float:left">
