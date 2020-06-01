@@ -5,9 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="./style.css">
-  <script src="//at.alicdn.com/t/font_1804115_k50qfg2l5dn.js
-  "></script>
+  <link rel="stylesheet" href="./loading.css">
+  <script src="//at.alicdn.com/t/font_1804115_k50qfg2l5dn.js"></script>
   <style type="text/css">
+
+    
+
     .icon {
        width: 1em; height: 1em;
        vertical-align: -0.15em;
@@ -17,18 +20,20 @@
     .site-welcome{
       display: none;
       position:fixed;
-      top:0;left:0;width: 100%;height: 100%;
-      background: black;
+      top:0;;left:0;width:100%;height:100%;
       z-index: 1;
+      display: none;
+      justify-content: center;
+      align-items: center;
     }
     .site-welcome.active{
-      display: block;
+      display: flex;
     }
 </style>
 </head>
 <body>
-  <div class="site-welcome active">
-    <div class="loading"></div>
+  <div id='siteWelcome' class="site-welcome active">
+    <div class="loadding"></div>
   </div>
   <div class="topNavBar">
     <div class="topNavBar-inner  clearfix">
@@ -179,5 +184,9 @@
       </div>
     </div>
   </section>
+  <script>
+  siteWelcome.classList.remove("active") 
+    
+  </script>
 </body>
 </html>
