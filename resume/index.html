@@ -25,6 +25,7 @@
       display: none;
       justify-content: center;
       align-items: center;
+      background: #bdc3c7;
     }
     .site-welcome.active{
       display: flex;
@@ -35,7 +36,7 @@
   <div id='siteWelcome' class="site-welcome active">
     <div class="loadding"></div>
   </div>
-  <div class="topNavBar">
+  <div id="topNavBar" class="topNavBar">
     <div class="topNavBar-inner  clearfix">
       <a class="logo" href="##" alt="logo" style="float:left">
         <span class="rs">RS</span><span class="card">card</span>
@@ -44,11 +45,23 @@
         <ul class="clearfix">
           <li><a href="##">ABOUT</a></li>
           <li><a href="##">SKILLS</a></li>
-          <li><a href="##">PORTFOLIO</a></li>
-          <li><a href="##">PORTFOLIO</a></li>
+          <li>
+            <a class="menuTrigger" href="##">PORTFOLIO</a>
+            <ul class="submenu">
+              <li>作品 1</li>
+              <li>作品 2</li>
+              <li>作品 3</li>
+            </ul>
+          </li>
           <li><a href="##">EXPERIENCE</a></li>
-          <li><a href="##">PRICING</a></li>
-          <li><a href="##">BLOG</a></li>
+          <li>
+            <a class="menuTrigger" href="##">BLOG</a>
+            <ul class="submenu">
+              <li>博客 1</li>
+              <li>博客 2</li>
+              <li>博客 3</li>
+            </ul>
+          </li>
           <li><a href="##">CALENDAR</a></li>
           <li><a href="##">CONTACT</a></li>
           <li><a href="##">OTHER</a></li>
@@ -186,8 +199,27 @@
     </div>
   </section>
   <script>
-  siteWelcome.classList.remove("active") 
-    
+   setTimeout(function(){
+     siteWelcome.classList.remove('active')
+   },1000) 
+   window.onscroll = function(xxx){
+      if(window.scrollY > 0){
+        topNavBar.classList.add('sticky')  
+      }else{
+        topNavBar.classList.remove('sticky')
+      }
+   }
+   let aTags = document.getElementsByClassName("menuTrigger")
+   for(let i=0; i<aTags; i++)
+   {
+     aTags[i].onmouseenter = function(x){
+       let a = x.currentTarget
+       let brother = a.nextSibling
+       while(brother.nodeType === 3){
+         brother = brother.nextSibling
+       }
+     }
+   }
   </script>
 </body>
 </html>
