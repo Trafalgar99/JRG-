@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Resume</title>
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./loading.css">
   <script src="//at.alicdn.com/t/font_1804115_k50qfg2l5dn.js"></script>
@@ -41,12 +41,12 @@
       <a class="logo" href="##" alt="logo" style="float:left">
         <span class="rs">RS</span><span class="card">card</span>
       </a>
-      <nav style="float: right;">
+      <nav class="menu" style="float: right;">
         <ul class="clearfix">
           <li><a href="##">ABOUT</a></li>
           <li><a href="##">SKILLS</a></li>
-          <li>
-            <a class="menuTrigger" href="##">PORTFOLIO</a>
+          <li >
+            <a  href="##">PORTFOLIO</a>
             <ul class="submenu">
               <li>作品 1</li>
               <li>作品 2</li>
@@ -54,8 +54,8 @@
             </ul>
           </li>
           <li><a href="##">EXPERIENCE</a></li>
-          <li>
-            <a class="menuTrigger" href="##">BLOG</a>
+          <li >
+            <a  href="##">BLOG</a>
             <ul class="submenu">
               <li>博客 1</li>
               <li>博客 2</li>
@@ -199,9 +199,12 @@
     </div>
   </section>
   <script>
+   // 使加载动画最少展示1s
    setTimeout(function(){
      siteWelcome.classList.remove('active')
    },1000) 
+
+   // 监听窗口滚动，改变topNavBar的样式
    window.onscroll = function(xxx){
       if(window.scrollY > 0){
         topNavBar.classList.add('sticky')  
@@ -209,16 +212,20 @@
         topNavBar.classList.remove('sticky')
       }
    }
-   let aTags = document.getElementsByClassName("menuTrigger")
-   for(let i=0; i<aTags; i++)
+   let liTags = document.querySelectorAll('nav.menu > ul > li')
+   for(let i=0; i<liTags.length; i++)
    {
-     aTags[i].onmouseenter = function(x){
-       let a = x.currentTarget
-       let brother = a.nextSibling
-       while(brother.nodeType === 3){
-         brother = brother.nextSibling
-       }
+     liTags[i].onmouseenter = function(x){
+       x.currentTarget.classList.add('active')
+       
      }
+     
+     liTags[i].onmouseleave = function(x){
+       x.currentTarget.classList.remove('active')
+       
+     }
+ 
+
    }
   </script>
 </body>
