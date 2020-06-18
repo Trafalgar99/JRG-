@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .images {
+        display: flex;
+        align-items: flex-start;
+        /* border: solid 1px #6cf; */
+        transition: transform 0.5s;
+      }
+      .images > img {
+      }
+      .window {
+        /* border: 5px solid black; */
+        width: 300px;
+        overflow: hidden;
+        margin: 100px auto;
+      }
+      button {
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #ddd;
+      }
+      .highlight {
+        background-color: #ddd;
+      }
+    </style>
+  </head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <body>
+    <div class="window">
+      <div class="images" id="images">
+        <img src="./huangse.jpg" alt="" width="300px" height="300px" />
+        <img src="./jiegeng.jpg" alt="" width="300px" height="300px" />
+        <img src="./lanse.jpg" alt="" width="300px" height="300px" />
+      </div>
+      <div id="buttons">
+        <button id="p1">第1张</button>
+        <button id="p2">第2张</button>
+        <button id="p3">第3张</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    //   第一版
+    // $(p1).on("click", function () {
+    //   $(images).css({
+    //     transform: "translateX(0)",
+    //   });
+    // });
+    // $(p2).on("click", function () {
+    //   $(images).css({
+    //     transform: "translateX(-300px)",
+    //   });
+    // });
+    // $(p3).on("click", function () {
+    //   $(images).css({
+    //     transform: "translateX(-600px)",
+    //   });
+    // });
+
+    // 第二版
+    var allButtons = $("#buttons > button");
+    for (let i = 0; i < allButtons.length; i++) {
+      $(allButtons[i]).on("click", (x) => {
+        var index = $(x.currentTarget).index();
+        var n1 = index * -300;
+        $("#images").css({
+          transform: "translateX(" + n1 + "px)",
+        });
+        n1 = index;
+        activeButton(allButtons.eq(n1));
+      });
+    }
+
+    // 自动播放
+    var n = 0;
+    var size = allButtons.length;
+    allButtons.eq(n % size).trigger("click");
+    activeButton(allButtons.eq(n % size));
+
+    var timerId = setInterval(() => {
+      n++;
+      allButtons.eq(n % size).trigger("click");
+      activeButton(allButtons.eq(n % size));
+    }, 1000);
+    function activeButton($button) {
+      $button
+
+        .addClass("highlight")
+        .siblings(".highlight")
+        .removeClass("highlight");
+    }
+    $(".window").on("mouseenter", () => {
+      window.clearInterval(timerId);
+      //   console.log("debug1");
+    });
+    $(".window").on("mouseleave", () => {
+      //   console.log("debug2");
+      timerId = setInterval(() => {
+        n++;
+        allButtons
+          .eq(n % size)
+          .trigger("click")
+          .addClass("highlight")
+          .siblings(".highlight")
+          .removeClass("highlight");
+      }, 1000);
+    });
+  </script>
+</html>
